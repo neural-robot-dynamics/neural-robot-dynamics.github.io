@@ -120,9 +120,9 @@
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <i class="fas fa-blog"></i>
                   </span>
-                  <span>Tech Blog</span>
+                  <span>Tech Blog Post</span>
                   </a>
               </span>
             </div>
@@ -138,8 +138,8 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img id="teaser" src="./static/images/envs.png"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
+                 alt="We demonstrate our approach by training NeRD models on six diverse robotic
+                 systems, from left: Cartpole, Double Pendulum, Ant, Franka, ANYmal, Cube Toss."/>
       <h2 class="subtitle has-text-centered">
       </h2>
     </div>
@@ -154,42 +154,178 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Accurate and efficient simulation of modern robots remains challenging due to their high degrees of freedom and intricate mechanisms. Neural simulators have emerged as a promising alternative to traditional analytical simulators, capable of efficiently predicting complex dynamics and adapting to real-world data; however, existing neural simulators typically require application-specific training and fail to generalize to novel tasks and/or environments, primarily due to inadequate representations of the global state. In this work, we address the problem of learning generalizable neural simulators for robots that are structured as articulated rigid bodies. We propose NeRD (Neural Robot Dynamics), learned robot-specific dynamics models for predicting future states for articulated rigid bodies under contact constraints. NeRD uniquely replaces the low-level dynamics and contact solvers in an analytical simulator and employs a robot-centric and spatially-invariant simulation state representation. We integrate the learned NeRD models as an interchangeable backend solver within a state-of-the-art robotics simulator. We conduct extensive experiments to show that the NeRD simulators are stable and accurate over a thousand simulation steps; generalize across tasks and environment configurations; enable policy learning exclusively in a neural engine; and, unlike most classical simulators, can be fine-tuned from real-world data to bridge the gap between simulation and reality.
+            Accurate and efficient simulation of modern robots remains challenging due to their high degrees of freedom and intricate mechanisms. 
+            Neural simulators have emerged as a promising alternative to traditional analytical simulators, capable of efficiently predicting 
+            complex dynamics and adapting to real-world data; however, existing neural simulators typically require application-specific training 
+            and fail to generalize to novel tasks and/or environments, primarily due to inadequate representations of the global state. In this 
+            work, we address the problem of learning generalizable neural simulators for robots that are structured as articulated rigid bodies.
+             We propose <i>NeRD</i> (Neural Robot Dynamics), learned robot-specific dynamics models for predicting future states for articulated rigid 
+             bodies under contact constraints. <i>NeRD</i> uniquely replaces the low-level dynamics and contact solvers in an analytical simulator and 
+             employs a robot-centric and spatially-invariant simulation state representation. We integrate the learned <i>NeRD</i> models as an interchangeable 
+             backend solver within a state-of-the-art robotics simulator. We conduct extensive experiments to show that the <i>NeRD</i> simulators are 
+             stable and accurate over a thousand simulation steps; generalize across tasks and environment configurations; enable policy learning 
+             exclusively in a neural engine; and, unlike most classical simulators, can be fine-tuned from real-world data to bridge the gap between 
+             simulation and reality.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src=" "
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
+</section>
+
+<section class="hero is-light is-small is-centered has-text-centered">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <h2 class="title is-3">Video</h2>
+            <video controls id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/NeRD_video.mp4"
+                    type="video/mp4">
+            </video>
+        </div>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Overview</h2>
+                <p>
+                    <i>NeRD</i> is characterized by two key innovations: (1) <b> hybrid prediction framework</b> (subfigures (a)(b)), 
+                    where a neural network model uniquely replaces only the application-agnostic simulation modules in a conventional simulator, i.e., 
+                    the low-level forward dynamics and contact solvers (subfigures (a)(b)), for the generalization across tasks and environments; 
+                    (2) <b>robot-centric state representation</b> (subfigure (c)), to ensure generalizability on robot’s spatial locations.
+                </p>
+                <br>
+                <img id="overview" src="./static/images/overview.png"
+                 alt="NeRD adopts a hybrid prediction framework. NeRD replaces the physics solver in an analytical simulator, and takes intermediate simulation quantities as inputs including robot state, contact information, and joint-space torques. The inputs are all represented in the robot base frame."/>
+                 <p class="has-text-centered">
+                    <b>Framework overview for Neural Robot Dynamics (<span class="dnerf">NeRD</span>).</b> (a) Workflow of a classical
+                    robotics simulator. The quantities shaded in green are application-agnostic. (b) Hybrid prediction
+                    framework of the <i>NeRD</i>-integrated simulator. Inputs to <i>NeRD</i> are the robot-centric state representations 
+                    (illustrated in (c)) within a history window.
+                 </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-light is-small">
+    <div class="hero-body">
+        <div class="container is-centered has-text-centered">
+            <!-- <h2 class="title is-3">More Results</h2> -->
+            <h3 class="title is-4">Double Pendulum with Various Grounds</h3>
+            <p>A single <i>NeRD</i> model for double pendulum genearlizes across various contact configurations</p>
+            <br>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                        <source src="./static/videos/pendulum/contact_free.mp4"
+                                type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Contact Free</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/pendulum/ground_1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ground Configuration 1</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/pendulum/ground_1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ground Configuration 2</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/pendulum/ground_1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ground Configuration 3</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/pendulum/ground_1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ground Configuration 4</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/pendulum/ground_1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ground Configuration 5</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/pendulum/ground_1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ground Configuration 6</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container is-centered has-text-centered">
+            <!-- <h2 class="title is-3">More Results</h2> -->
+            <h3 class="title is-4">Policy Learning and Evaluation</h3>
+            <p>Robot policies can be learned <b>exclusively</b> in the <i>NeRD</i>-integrated neural simulator.</p>
+            <p>The executions of those learned policies exhibit high matching between <i>NeRD</i>-integrated simulator and the ground-truth analytical simulator.</p>
+            <p>(Each robot instance shares a single <i>NeRD</i> model)</p>
+            <br>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                        <source src="./static/videos/policy_learning/anymal_forward.mp4"
+                                type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">ANYmal Forward Walking</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/policy_learning/anymal_sideways.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">ANYmal Sideways Walking</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/policy_learning/cartpole.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Cartpole Swing Up</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/pendulum/ground_1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ground Configuration 2</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </section>
 
 
 
-
-
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{xu2025nerd,
+  author    = {Xu, Jie and Heiden, Eric and Akinola, Iretiayo and Fox, Dieter and Macklin, Miles and Narang, Yashraj},
+  title     = {Neural Robot Dynamics},
+  journal   = {CoRL},
+  year      = {2025},
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
