@@ -78,6 +78,7 @@
               <!-- PDF Link. -->
               <span class="link-block">
                 <a href=""
+                   target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -87,6 +88,7 @@
               </span>
               <span class="link-block">
                 <a href=""
+                   target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -96,7 +98,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href=""
+                <a target="_blank" href="./static/videos/NeRD_video.mp4"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -107,6 +109,7 @@
               <!-- Code Link. -->
               <span class="link-block">
                 <a href=""
+                   target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -118,6 +121,7 @@
               <!-- Code Link. -->
               <span class="link-block">
                 <a href=""
+                   target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-blog"></i>
@@ -137,9 +141,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" src="./static/images/envs.png"
+      <img id="teaser" src="./static/images/envs_new.png"
                  alt="We demonstrate our approach by training NeRD models on six diverse robotic
-                 systems, from left: Cartpole, Double Pendulum, Ant, Franka, ANYmal, Cube Toss."/>
+                 systems. We show five of them here from left: Cartpole, Double Pendulum, Ant, Franka, ANYmal."/>
       <h2 class="subtitle has-text-centered">
       </h2>
     </div>
@@ -174,7 +178,7 @@
   </div>
 </section>
 
-<section class="hero is-light is-small is-centered has-text-centered">
+<!-- <section class="hero is-light is-small is-centered has-text-centered">
     <div class="container is-max-desktop">
         <div class="hero-body">
             <h2 class="title is-3">Video</h2>
@@ -184,7 +188,7 @@
             </video>
         </div>
     </div>
-  </section>
+  </section> -->
 
 <section class="section">
     <div class="container is-max-desktop">
@@ -213,6 +217,7 @@
 
 <section class="hero is-light is-small">
     <div class="hero-body">
+        <h3 class="title is-3 has-text-centered">More Visual Results</h3>
         <div class="container is-centered has-text-centered">
             <!-- <h2 class="title is-3">More Results</h2> -->
             <h3 class="title is-4">Double Pendulum with Various Grounds</h3>
@@ -235,28 +240,28 @@
                 </div>
                 <div class="item">
                     <video poster="" autoplay controls muted loop playsinline height="100%">
-                    <source src="./static/videos/pendulum/ground_1.mp4"
+                    <source src="./static/videos/pendulum/ground_2.mp4"
                             type="video/mp4">
                     </video>
                     <p class="subtitle has-text-centered">Ground Configuration 2</p>
                 </div>
                 <div class="item">
                     <video poster="" autoplay controls muted loop playsinline height="100%">
-                    <source src="./static/videos/pendulum/ground_1.mp4"
+                    <source src="./static/videos/pendulum/ground_3.mp4"
                             type="video/mp4">
                     </video>
                     <p class="subtitle has-text-centered">Ground Configuration 3</p>
                 </div>
                 <div class="item">
                     <video poster="" autoplay controls muted loop playsinline height="100%">
-                    <source src="./static/videos/pendulum/ground_1.mp4"
+                    <source src="./static/videos/pendulum/ground_4.mp4"
                             type="video/mp4">
                     </video>
                     <p class="subtitle has-text-centered">Ground Configuration 4</p>
                 </div>
                 <div class="item">
                     <video poster="" autoplay controls muted loop playsinline height="100%">
-                    <source src="./static/videos/pendulum/ground_1.mp4"
+                    <source src="./static/videos/pendulum/ground_5.mp4"
                             type="video/mp4">
                     </video>
                     <p class="subtitle has-text-centered">Ground Configuration 5</p>
@@ -272,11 +277,10 @@
         </div>
         <br><br>
         <div class="container is-centered has-text-centered">
-            <!-- <h2 class="title is-3">More Results</h2> -->
             <h3 class="title is-4">Policy Learning and Evaluation</h3>
             <p>Robot policies can be learned <b>exclusively</b> in the <i>NeRD</i>-integrated neural simulator.</p>
-            <p>The executions of those learned policies exhibit high matching between <i>NeRD</i>-integrated simulator and the ground-truth analytical simulator.</p>
-            <p>(Each robot instance shares a single <i>NeRD</i> model)</p>
+            <p>The executions of those learned policies exhibit high matching between the <span style="color: rgb(255, 170, 0);"><i>NeRD</i>-integrated simulator </span> and the <span style="color: rgb(0, 200, 255);">ground-truth analytical simulator</span>.</p>
+            <p>(Each robot instance shares a <b>single</b> <i>NeRD</i> model)</p>
             <br>
             <div id="results-carousel" class="carousel results-carousel">
                 <div class="item">
@@ -295,6 +299,13 @@
                 </div>
                 <div class="item">
                     <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/policy_learning/franka_sim.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Franka Reach</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
                     <source src="./static/videos/policy_learning/cartpole.mp4"
                             type="video/mp4">
                     </video>
@@ -302,14 +313,46 @@
                 </div>
                 <div class="item">
                     <video poster="" autoplay controls muted loop playsinline height="100%">
-                    <source src="./static/videos/pendulum/ground_1.mp4"
+                    <source src="./static/videos/policy_learning/ant_run.mp4"
                             type="video/mp4">
                     </video>
-                    <p class="subtitle has-text-centered">Ground Configuration 2</p>
+                    <p class="subtitle has-text-centered">Ant Running</p>
                 </div>
-                
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/policy_learning/ant_spin.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ant Spinning</p>
+                </div>
+                <div class="item">
+                    <video poster="" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/policy_learning/ant_spin_track.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p class="subtitle has-text-centered">Ant Spin Tracking</p>
+                </div>
             </div>
         </div>
+        <br><br>
+        <div class="container is-centered has-text-centered">
+            <h3 class="title is-4">Franka Reach Policy in Real</h3>
+            <p>The Franka reach policy learned in the <i>NeRD</i>-integrated neural simulator can be zero-shot deployed in real</p>
+            <br>
+            <video controls id="franka_real" autoplay muted loop playsinline style="width: 50%; height: auto;">
+                <source src="./static/videos/franka_real/franka_real.mp4"
+                        type="video/mp4">
+            </video>
+        </div>
+        <br><br>
+        <div class="container is-centered has-text-centered">
+            <h3 class="title is-4">Fine-tuning from Real Data </h3>
+            <p>The <i>NeRD</i> models pre-trained from simulators can be fine-tuned from real data to capture real-world dynamics. </p>
+            <br>
+            <img id="teaser" src="./static/images/cubetoss.png" style="width: 50%; height: auto;"
+                 alt="We fine-tuned a NeRD model (pre-trained from analytical simulation data) for cube tossing dynamics using real-world data. The simulator integrated with the fine-tuned NeRD model better matches real-world cube tossing dynamics."/>
+        </div>
+
     </div>
 </section>
 
